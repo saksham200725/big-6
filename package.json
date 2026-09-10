@@ -1,0 +1,27 @@
+{
+  "name": "ui-ux",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "./node_modules/.bin/vite",
+    "build": "./node_modules/.bin/vite build",
+    "lint": "./node_modules/.bin/oxlint",
+    "preview": "./node_modules/.bin/vite preview",
+    "audit": "node scripts/critic-audit.js"
+  },
+  "dependencies": {
+    "lucide-react": "^1.43.0",
+    "maplibre-gl": "^6.9.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "oxlint": "^1.79.0",
+    "puppeteer-core": "^25.10.0",
+    "vite": "^8.2.2"
+  }
+}

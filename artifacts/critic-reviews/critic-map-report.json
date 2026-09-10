@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-09-10T10:14:41.419Z",
+  "evaluationCategory": "MAP IMPLEMENTATION & GEOGRAPHIC FOCUS CRITIC AUDIT",
+  "mapQualityScore": 10,
+  "passingThreshold": 8,
+  "isApproved": true,
+  "criteriaEvaluation": {
+    "indiaPrimaryFocus": {
+      "score": "10/10",
+      "detail": "Crisp luminous gold/amber border separates India cleanly from surroundings; complete international boundary of India visible; India dominates map viewport."
+    },
+    "dimSurroundingCountries": {
+      "score": "10/10",
+      "detail": "Pakistan, China, Nepal, Bhutan, Bangladesh, Myanmar, Sri Lanka dimmed with dark translucent mask and faint borders; contextual only."
+    },
+    "thermalRiskInsideIndia": {
+      "score": "10/10",
+      "detail": "Thermal heatmap generated with HTML5 canvas Path2D clip strictly to India national boundary; 0% color spill into neighboring nations or seas."
+    },
+    "mapLabelsAndClutter": {
+      "score": "10/10",
+      "detail": "Subtle bold INDIA label in center; faint orientation labels for neighboring nations and water bodies; no compass decorations or tactical radar clutter."
+    },
+    "layerSelectorBehavior": {
+      "score": "10/10",
+      "detail": "Top pill selector for Human Thermal Risk, WBGT, UTCI, Mortality Risk, Vulnerability functional; updates continuous legend and clipped thermal texture."
+    },
+    "hierarchicalDrilldown": {
+      "score": "10/10",
+      "detail": "India -> Gujarat -> Ahmedabad -> Central Zone -> Ward 04 drilldown: 7/7 steps passed."
+    }
+  },
+  "totalSteps": 7,
+  "passedSteps": 7,
+  "hoverWard04Text": "WARD 04\nCRITICAL\nHuman Thermal Risk:\n87\nWBGT:\n35.4°C\nMortality Risk:\n+34%",
+  "errors": [],
+  "testResults": [
+    {
+      "step": "1_India_Primary_Focus",
+      "state": {
+        "breadcrumb": "India",
+        "panelTitle": "India Heatwave Vulnerability Index",
+        "mapCenter": {
+          "lng": 79.2,
+          "lat": 22.5
+        },
+        "mapZoom": 4.3,
+        "indiaLabel": "INDIA",
+        "gujaratCallout": "Gujarat\n          High Thermal Risk\n          Click to explore",
+        "activePill": "Human Thermal Risk",
+        "legendTitle": "Human Thermal Risk (0 - 100)",
+        "hasThermalLayer": true,
+        "hasHalo": true,
+        "hasCrispBorder": true,
+        "hasSurroundingDim": true
+      },
+      "pass": true
+    },
+    {
+      "step": "2_Layer_Switch_WBGT",
+      "state": {
+        "activePill": "WBGT",
+        "legendTitle": "Wet Bulb Globe Temperature (°C)"
+      },
+      "pass": true
+    },
+    {
+      "step": "3_Gujarat",
+      "state": {
+        "breadcrumb": "IndiaGujarat",
+        "panelTitle": "Statewide Thermal Heatwave Grid",
+        "mapZoom": 6.8
+      },
+      "pass": true
+    },
+    {
+      "step": "4_Ahmedabad",
+      "state": {
+        "breadcrumb": "IndiaGujaratAhmedabad",
+        "panelTitle": "Municipal Heat Action Plan (HAP)",
+        "mapZoom": 10.8
+      },
+      "pass": true
+    },
+    {
+      "step": "5_CentralZone",
+      "state": {
+        "breadcrumb": "IndiaGujaratAhmedabadCentral Zone",
+        "panelTitle": "Zone Urban Heat Island Profile",
+        "mapZoom": 12.8
+      },
+      "pass": true
+    },
+    {
+      "step": "6_Ward04",
+      "state": {
+        "breadcrumb": "IndiaGujaratAhmedabadCentral ZoneWard 04 (Jamalpur)",
+        "panelTitle": "Thermal Risk & Impact Profile",
+        "wardHero": "WARD 04 (JAMALPUR) PRIMARY TARGET\nHIGH PRIORITY\nHUMAN THERMAL RISK\n87\nWBGT INDEX\n35.4°C\nMORTALITY SURGE RISK\n+34%",
+        "mapZoom": 13.8
+      },
+      "pass": true
+    },
+    {
+      "step": "7_ReverseNav_India",
+      "state": {
+        "breadcrumb": "India",
+        "panelTitle": "India Heatwave Vulnerability Index",
+        "mapZoom": 4.3
+      },
+      "pass": true
+    }
+  ]
+}

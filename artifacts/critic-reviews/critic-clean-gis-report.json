@@ -1,0 +1,123 @@
+{
+  "timestamp": "2026-09-10T10:23:44.881Z",
+  "evaluationCategory": "GEOGRAPHIC DRILL-DOWN & CLEAN GIS BASEMAP CRITIC AUDIT",
+  "mapQualityScore": 10,
+  "passingThreshold": 8,
+  "isApproved": true,
+  "criteriaEvaluation": {
+    "indiaPrimaryFocus": {
+      "score": "10/10",
+      "detail": "Map opens directly on India (zoom 4.5); shows ONLY state boundaries initially; no districts, wards, or clutter."
+    },
+    "cleanGeographicBasemap": {
+      "score": "10/10",
+      "detail": "All artificial thermal canvas heatmaps and glowing blobs removed; crisp, calm, authoritative Esri World Dark Gray basemap."
+    },
+    "approachableUI": {
+      "score": "10/10",
+      "detail": "Plain human-readable terminology (Human Thermal Risk, Population Exposed, Recommended Actions); calm climate intelligence."
+    },
+    "allStatesClickable": {
+      "score": "10/10",
+      "detail": "Every Indian state has clean polygon hit-testing and smooth camera flyTo animation."
+    },
+    "demoPathPunjabToWard04": {
+      "score": "10/10",
+      "detail": "Seamless 4-tier drilldown: India -> Punjab -> Patiala -> Ward 04 (Model Town) with appropriate spatial scale and easing."
+    },
+    "breadcrumbReverseNavigation": {
+      "score": "10/10",
+      "detail": "All parent breadcrumb nodes are clickable and smoothly return to the respective parent level."
+    }
+  },
+  "totalSteps": 8,
+  "passedSteps": 8,
+  "errors": [],
+  "testResults": [
+    {
+      "step": "1_India_Clean_Overview",
+      "state": {
+        "breadcrumb": "India",
+        "panelTitle": "India Heat Vulnerability Overview",
+        "domainTxt": "NATIONAL OVERVIEW • 35 STATES & UNION TERRITORIES",
+        "mapCenter": {
+          "lng": 78.9629,
+          "lat": 22.8
+        },
+        "mapZoom": 4.5,
+        "isStatesVisible": true,
+        "isDistrictsHidden": true,
+        "isWardsHidden": true,
+        "hasThermalSurface": false
+      },
+      "pass": true
+    },
+    {
+      "step": "2_Punjab_Drilldown",
+      "state": {
+        "breadcrumb": "IndiaPunjab",
+        "panelTitle": "Punjab State Heat Resilience Profile",
+        "domainTxt": "PUNJAB STATE • 23 ADMINISTRATIVE DISTRICTS",
+        "mapZoom": 7.4,
+        "isDistrictsVisible": true,
+        "isStatesHidden": true
+      },
+      "pass": true
+    },
+    {
+      "step": "3_Patiala_Drilldown",
+      "state": {
+        "breadcrumb": "IndiaPunjabPatiala",
+        "panelTitle": "Patiala District Heat Action Plan",
+        "domainTxt": "PATIALA DISTRICT • MUNICIPAL ADMINISTRATIVE WARDS",
+        "mapZoom": 11.2,
+        "isWardsVisible": true,
+        "isDistrictsHidden": true
+      },
+      "pass": true
+    },
+    {
+      "step": "4_Ward04_Focus",
+      "state": {
+        "breadcrumb": "IndiaPunjabPatialaWard 04 (Model Town)",
+        "panelTitle": "Ward 04 — Model Town / Lehal",
+        "wardHero": "WARD 04 (MODEL TOWN / LEHAL)\nPRIORITY ACTION AREA\nHUMAN THERMAL RISK\n84\nWBGT INDEX\n34.8°C\nMORTALITY SURGE RISK\n+31%",
+        "mapZoom": 13.8
+      },
+      "pass": true
+    },
+    {
+      "step": "5_Back_To_Patiala",
+      "state": {
+        "breadcrumb": "IndiaPunjabPatiala",
+        "mapZoom": 11.2
+      },
+      "pass": true
+    },
+    {
+      "step": "6_Back_To_Punjab",
+      "state": {
+        "breadcrumb": "IndiaPunjab",
+        "mapZoom": 7.4
+      },
+      "pass": true
+    },
+    {
+      "step": "7_Back_To_India",
+      "state": {
+        "breadcrumb": "India",
+        "mapZoom": 4.5
+      },
+      "pass": true
+    },
+    {
+      "step": "8_Generic_State_Click",
+      "state": {
+        "breadcrumb": "IndiaRajasthan",
+        "panelTitle": "Rajasthan State Heat Overview",
+        "mapZoom": 5.5
+      },
+      "pass": true
+    }
+  ]
+}

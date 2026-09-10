@@ -1,0 +1,325 @@
+.gis-map-container {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  background-color: var(--bg-app);
+  overflow: hidden;
+}
+
+.maplibre-viewport {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* =========================================================
+   TOP FLOATING CONTROLS: Clean Domain Status & Search
+   ========================================================= */
+.gis-map-topbar {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 15;
+  gap: 12px;
+}
+
+.gis-domain-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+  background: rgba(10, 15, 24, 0.88);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.domain-txt {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  font-family: var(--font-sans);
+}
+
+.gis-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.gis-search-wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(10, 15, 24, 0.88);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  gap: 7px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  transition: all 0.2s ease;
+}
+
+.gis-search-wrapper:focus-within {
+  border-color: rgba(255, 255, 255, 0.25);
+  width: 240px;
+  background: rgba(14, 21, 33, 0.95);
+}
+
+.search-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.gis-search-input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 11px;
+  width: 100%;
+  outline: none;
+  font-family: inherit;
+}
+
+.gis-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.gis-reset-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(10, 15, 24, 0.88);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: all 0.15s ease;
+}
+
+.gis-reset-btn:hover {
+  background: rgba(22, 32, 48, 0.95);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================================
+   HTML MARKERS
+   ========================================================= */
+
+/* Patiala District Callout Badge in Punjab view */
+.map-target-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: rgba(12, 18, 28, 0.95);
+  border: 1px solid #f97316;
+  border-radius: var(--radius-xs);
+  padding: 5px 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
+}
+
+.map-target-badge:hover {
+  background: rgba(20, 30, 48, 0.98);
+  border-color: #fb923c;
+  transform: translate(-50%, -52%);
+}
+
+.target-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.target-sub {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--risk-orange);
+}
+
+/* Ward 04 Centroid Badge in Patiala view */
+.map-ward-centroid-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(15, 22, 34, 0.95);
+  border: 1px solid var(--risk-orange);
+  border-radius: var(--radius-xs);
+  padding: 4px 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.badge-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--risk-orange);
+  box-shadow: 0 0 6px var(--risk-orange);
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+.badge-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.badge-temp {
+  font-size: 8.5px;
+  font-weight: 600;
+  color: var(--risk-orange);
+  font-family: var(--font-mono);
+}
+
+/* =========================================================
+   FRIENDLY, RESTRAINED HOVER TOOLTIP
+   ========================================================= */
+.gis-hover-tooltip {
+  position: absolute;
+  pointer-events: none;
+  z-index: 50;
+  background-color: rgba(14, 20, 31, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-sm);
+  padding: 7px 11px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: tooltip-fade-in 0.1s ease-out;
+}
+
+@keyframes tooltip-fade-in {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tooltip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 3px;
+}
+
+.tooltip-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.tooltip-badge {
+  font-size: 8.5px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+}
+
+.tooltip-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  gap: 12px;
+}
+
+.tooltip-lbl {
+  color: var(--text-muted);
+}
+
+.tooltip-val {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* =========================================================
+   BOTTOM GIS METADATA BAR
+   ========================================================= */
+.gis-meta-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background-color: rgba(8, 12, 19, 0.95);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 10px;
+  color: var(--text-muted);
+  z-index: 10;
+  gap: 10px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.meta-label {
+  color: var(--text-subtle);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+.meta-value {
+  color: var(--text-secondary);
+}
+
+.meta-divider {
+  width: 1px;
+  height: 10px;
+  background-color: var(--border-subtle);
+}
